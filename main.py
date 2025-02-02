@@ -1,18 +1,17 @@
 import RPi.GPIO as GPIO
 import time
 
-# Set BOARD numbering system (physical pins)
 GPIO.setmode(GPIO.BOARD)
 
-# Motor Driver Pins (L298N)
+# Motor Driver Pins
 OUT1 = 31
 OUT2 = 33
 OUT3 = 35
 OUT4 = 37
 
-# Stepper Motor Sequence (Full-step)
+# Stepper Motor Sequence
 STEP_SEQUENCE = [
-    (1, 0, 1, 0),  # OUT1, OUT2, OUT3, OUT4
+    (1, 0, 1, 0), 
     (0, 1, 1, 0),
     (0, 1, 0, 1),
     (1, 0, 0, 1)
@@ -20,7 +19,7 @@ STEP_SEQUENCE = [
 
 # Global variables
 current_step = 0
-step_delay = 0.1  # Increase this value to slow down the motor
+step_delay = 0.1  
 
 def setup():
     # Motor pins setup
